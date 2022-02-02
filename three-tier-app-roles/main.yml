@@ -1,0 +1,35 @@
+---
+- name: Play to setup mysql server
+  hosts: database_servers
+  roles:
+    - role: firewall
+      vars:
+        fw_services:
+          - mysql
+
+    - role: database
+
+- name: Play to setup apache servers
+  hosts: backend_servers
+  roles:
+    - role: firewall
+      vars:
+        fw_services:
+          - http
+        fw_tcp_ports:
+          - 8080/tcp
+
+    - role: apache
+
+- name: Play to setup Haproxy
+  hosts: loadbalancers
+  roles:
+    - role: firewall
+      vars:
+        fw_services:
+          - http
+        fw_tcp_ports:
+          - 5000/tcp
+
+    - role: haproxy
+

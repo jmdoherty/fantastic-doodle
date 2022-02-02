@@ -1,0 +1,6 @@
+---
+# vars file for haproxy
+haproxy_packages:
+  - haproxy
+haproxy_services:
+  - haproxy

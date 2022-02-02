@@ -1,0 +1,53 @@
+---
+heat_template_version: 2018-03-02
+description: Top level HOT for creating instances.
+
+resources:
+  node1:
+    type: OS::Nova::Server
+    properties:
+      name: server
+      flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
+      key_name: 1bfa-keypair
+      config_drive: True
+      block_device_mapping_v2:
+        - image: rhel-8.3
+          delete_on_termination: true
+          volume_size: 50
+          boot_index: 0
+      user_data_format: RAW
+      user_data: |
+        #cloud-config
+        ssh_authorized_keys: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBFigCWoa58dxi1wV/LZEJQoI7qG/3hr+8dHe65Yl8udUbEW1i6XgPM7e2tukcpzaRlIWc8kY4gJ+TPyz8eWUfE55uKdIa3Y/Ygt5ie+7M3V51EdZlukQq9n9M+EUQ6c43VLaayHLYV5yDSA1ajQAsowmDImDX3BeX2dd7odBQCbputiP8Gn6vCheJynKcyh8QOVOoPBA/zHy0o5tjVfoVZS1fX9EV8iOsSEy5hQrze8y5uC+doL2oQkzYzFZ1Pa88S5ykqsenAyOcAVTFlCKwyJQdrvK3yXAtbWFcsH5XHF3vp1wZ+cFXLjsIMr+U0wM/FhH7phICL9tMKt1biD65 opentlc-mgr@admin.na.shared.opentlc.com"
+      networks:
+        - network: 1bfa-dev-network
+      metadata:
+        'AnsibleGroup' : "apps"
+      security_groups:
+        - 1bfa-DefaultSG
+        - 1bfa-HostSG
+  
+  node2:
+    type: OS::Nova::Server
+    properties:
+      name: server
+      flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
+      key_name: 1bfa-keypair
+      config_drive: True
+      block_device_mapping_v2:
+        - image: rhel-8.3
+          delete_on_termination: true
+          volume_size: 50
+          boot_index: 0
+      user_data_format: RAW
+      user_data: |
+        #cloud-config
+        ssh_authorized_keys: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBFigCWoa58dxi1wV/LZEJQoI7qG/3hr+8dHe65Yl8udUbEW1i6XgPM7e2tukcpzaRlIWc8kY4gJ+TPyz8eWUfE55uKdIa3Y/Ygt5ie+7M3V51EdZlukQq9n9M+EUQ6c43VLaayHLYV5yDSA1ajQAsowmDImDX3BeX2dd7odBQCbputiP8Gn6vCheJynKcyh8QOVOoPBA/zHy0o5tjVfoVZS1fX9EV8iOsSEy5hQrze8y5uC+doL2oQkzYzFZ1Pa88S5ykqsenAyOcAVTFlCKwyJQdrvK3yXAtbWFcsH5XHF3vp1wZ+cFXLjsIMr+U0wM/FhH7phICL9tMKt1biD65 opentlc-mgr@admin.na.shared.opentlc.com"
+      networks:
+        - network: 1bfa-dev-network
+      metadata:
+        'AnsibleGroup' : "apps"
+      security_groups:
+        - 1bfa-DefaultSG
+        - 1bfa-HostSG
+  

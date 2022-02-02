@@ -1,0 +1,66 @@
+- name: Setup DB
+  hosts: db
+  vars:
+    packages:
+      - mariadb
+      - mariadb-server
+      - python3-PyMySQL
+    services:
+      - mariadb
+    fw_services:
+      - mysql
+    app_setup:
+      user: devops
+      privilege: "*.*:ALL,GRANT"
+      database: userdb
+      password: redhat
+      backupfile: userdb.backup
+
+  tasks:
+    - name: Install firewalld
+      yum:
+        name: firewalld
+        state: latest
+    - name: Start firewalld
+      service:
+        name: firewalld
+        enabled: yes
+        state: started
+    - name: Open services
+      firewalld:
+        service: "{{ item }}"
+        state: enabled
+        immediate: true
+        permanent: true
+      loop: "{{ fw_services }}"
+    
+    - name: Install packages
+      yum:
+        name: "{{ item }}"
+      loop: "{{ packages }}"
+    
+    - name: Start services
+      service:
+        name: "{{ item }}"
+        enabled: true
+        state: started
+      loop: "{{ services }}"
+
+    - name: Set user privs
+      mysql_user:
+        name: "{{ app_setup.user }}"
+        priv: "{{ app_setup.privilege }}"
+        append_privs: yes
+        password: "{{ app_setup.password }}"
+        host: '%'
+
+    - name: Copy db backup
+      copy:
+        src: "{{ app_setup.backupfile }}"
+        dest: /tmp
+    
+    - name: Restore backup
+      mysql_db:
+        name: "{{ app_setup.database }}"
+        state: import
+        target: "/tmp/{{ app_setup.backupfile }}"

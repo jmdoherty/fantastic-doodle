@@ -1,0 +1,62 @@
+- name: Setup frontend
+  hosts: frontend
+  vars:
+    packages:
+      - haproxy
+    services:
+      - haproxy
+    fw_services:
+      - http
+    fw_ports:
+      - 5000/tcp
+  handlers:
+    - name: restart_services
+      service:
+        name: "{{ item }}"
+        state: restarted
+      loop: "{{ services }}"
+  tasks:
+    - name: Install firewalld
+      yum:
+        name: firewalld
+        state: latest
+
+    - name: Start firewalld
+      service:
+        name: firewalld
+        enabled: yes
+        state: started
+
+    - name: Open fw services
+      firewalld:
+        service: "{{ item }}"
+        state: enabled
+        immediate: true
+        permanent: true
+      loop: "{{ fw_services }}"
+    
+    - name: Open fw ports
+      firewalld:
+        port: "{{ item }}"
+        state: enabled
+        immediate: true
+        permanent: true
+      loop: "{{ fw_ports }}"
+
+    - name: Install packages
+      yum:
+        name: "{{ item }}"
+      loop: "{{ packages }}"
+
+    - name: Copy haproxy cfg
+      copy:
+        src: haproxy.cfg
+        dest: /etc/haproxy/haproxy.cfg
+      notify:
+        - restart_services
+
+    - name: Start services
+      service:
+        name: "{{ item }}"
+        state: started
+      loop: "{{ services }}"

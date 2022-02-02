@@ -1,0 +1,32 @@
+---
+instances:
+-   CPU: 2
+    Creation Date: '2022-01-31T15:27:11Z'
+    Instance Stae: active
+    Memory: 10240
+    Metadata:
+        AnsibleGroup: bastions,controls
+        Project: ansible-advanced-v2-1bfa
+        env_type: ansible-advanced-v2
+        guid: 1bfa
+        instance_filter: ansible-advanced-v2-james.doherty@arctiq.ca
+        ostype: linux
+        owner: james.doherty@arctiq.ca
+    Name: control
+    Private IP: 192.168.50.109
+    Public IP: 150.239.26.132
+-   CPU: 16
+    Creation Date: '2022-01-31T15:27:10Z'
+    Instance Stae: active
+    Memory: 30720
+    Metadata:
+        AnsibleGroup: satellites
+        Project: ansible-advanced-v2-1bfa
+        env_type: ansible-advanced-v2
+        guid: 1bfa
+        instance_filter: ansible-advanced-v2-james.doherty@arctiq.ca
+        ostype: linux
+        owner: james.doherty@arctiq.ca
+    Name: satellite
+    Private IP: 192.168.50.170
+    Public IP: 150.239.26.171

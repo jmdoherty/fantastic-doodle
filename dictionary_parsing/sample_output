@@ -1,0 +1,347 @@
+localhost | SUCCESS => {
+    "changed": false,
+    "openstack_servers": [
+        {
+            "OS-DCF:diskConfig": "MANUAL",
+            "OS-EXT-AZ:availability_zone": "nova",
+            "OS-EXT-SRV-ATTR:host": null,
+            "OS-EXT-SRV-ATTR:hostname": null,
+            "OS-EXT-SRV-ATTR:hypervisor_hostname": null,
+            "OS-EXT-SRV-ATTR:instance_name": null,
+            "OS-EXT-SRV-ATTR:kernel_id": null,
+            "OS-EXT-SRV-ATTR:launch_index": null,
+            "OS-EXT-SRV-ATTR:ramdisk_id": null,
+            "OS-EXT-SRV-ATTR:reservation_id": null,
+            "OS-EXT-SRV-ATTR:root_device_name": null,
+            "OS-EXT-SRV-ATTR:user_data": null,
+            "OS-EXT-STS:power_state": 1,
+            "OS-EXT-STS:task_state": null,
+            "OS-EXT-STS:vm_state": "active",
+            "OS-SCH-HNT:scheduler_hints": null,
+            "OS-SRV-USG:launched_at": "2022-02-01T14:06:01.000000",
+            "OS-SRV-USG:terminated_at": null,
+            "accessIPv4": "150.239.26.132",
+            "accessIPv6": "",
+            "addresses": {
+                "1bfa-default-network": [
+                    {
+                        "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:05:49:d3",
+                        "OS-EXT-IPS:type": "fixed",
+                        "addr": "192.168.50.109",
+                        "version": 4
+                    },
+                    {
+                        "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:05:49:d3",
+                        "OS-EXT-IPS:type": "floating",
+                        "addr": "150.239.26.132",
+                        "version": 4
+                    }
+                ]
+            },
+            "adminPass": null,
+            "az": "nova",
+            "block_device_mapping": null,
+            "cloud": "1bfa-project",
+            "config_drive": "True",
+            "created": "2022-01-31T15:27:11Z",
+            "created_at": "2022-01-31T15:27:11Z",
+            "description": null,
+            "disk_config": "MANUAL",
+            "flavor": {
+                "disk": 60,
+                "ephemeral": 0,
+                "extra_specs": {},
+                "original_name": "GLOBAL-CPU_2_Memory_10240_Disk_60_flavor",
+                "ram": 10240,
+                "swap": 0,
+                "vcpus": 2
+            },
+            "has_config_drive": true,
+            "host": null,
+            "hostId": "7dc5e288f31fc8d8abe873693d34ce73f5d06eb55e2df9ebd7f70eaa",
+            "host_id": "7dc5e288f31fc8d8abe873693d34ce73f5d06eb55e2df9ebd7f70eaa",
+            "host_status": null,
+            "hostname": null,
+            "hypervisor_hostname": null,
+            "id": "06800208-d975-4e87-b4f2-02afd48460fd",
+            "image": {
+                "id": null
+            },
+            "instance_name": null,
+            "interface_ip": "150.239.26.132",
+            "kernel_id": null,
+            "key_name": "1bfa-infra_key",
+            "launch_index": null,
+            "launched_at": "2022-02-01T14:06:01.000000",
+            "location": {
+                "cloud": "1bfa-project",
+                "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "855a8d86f375470ca4c58b5d1ec027b7",
+                    "name": "1bfa-project"
+                },
+                "region_name": "regionOne",
+                "zone": "nova"
+            },
+            "locked": false,
+            "metadata": {
+                "AnsibleGroup": "bastions,controls",
+                "Project": "ansible-advanced-v2-1bfa",
+                "env_type": "ansible-advanced-v2",
+                "guid": "1bfa",
+                "instance_filter": "ansible-advanced-v2-james.doherty@arctiq.ca",
+                "ostype": "linux",
+                "owner": "james.doherty@arctiq.ca"
+            },
+            "name": "control",
+            "networks": {},
+            "os-extended-volumes:volumes_attached": [
+                {
+                    "delete_on_termination": true,
+                    "id": "f07e2750-a5ae-41b5-a76a-7185dea74c5d"
+                }
+            ],
+            "personality": null,
+            "power_state": 1,
+            "private_v4": "192.168.50.109",
+            "progress": 0,
+            "project_id": "855a8d86f375470ca4c58b5d1ec027b7",
+            "properties": {
+                "OS-DCF:diskConfig": "MANUAL",
+                "OS-EXT-AZ:availability_zone": "nova",
+                "OS-EXT-SRV-ATTR:host": null,
+                "OS-EXT-SRV-ATTR:hostname": null,
+                "OS-EXT-SRV-ATTR:hypervisor_hostname": null,
+                "OS-EXT-SRV-ATTR:instance_name": null,
+                "OS-EXT-SRV-ATTR:kernel_id": null,
+                "OS-EXT-SRV-ATTR:launch_index": null,
+                "OS-EXT-SRV-ATTR:ramdisk_id": null,
+                "OS-EXT-SRV-ATTR:reservation_id": null,
+                "OS-EXT-SRV-ATTR:root_device_name": null,
+                "OS-EXT-SRV-ATTR:user_data": null,
+                "OS-EXT-STS:power_state": 1,
+                "OS-EXT-STS:task_state": null,
+                "OS-EXT-STS:vm_state": "active",
+                "OS-SCH-HNT:scheduler_hints": null,
+                "OS-SRV-USG:launched_at": "2022-02-01T14:06:01.000000",
+                "OS-SRV-USG:terminated_at": null,
+                "host_status": null,
+                "locked": false,
+                "os-extended-volumes:volumes_attached": [
+                    {
+                        "delete_on_termination": true,
+                        "id": "f07e2750-a5ae-41b5-a76a-7185dea74c5d"
+                    }
+                ],
+                "trusted_image_certificates": null
+            },
+            "public_v4": "150.239.26.132",
+            "public_v6": "",
+            "ramdisk_id": null,
+            "region": "regionOne",
+            "reservation_id": null,
+            "root_device_name": null,
+            "scheduler_hints": null,
+            "security_groups": [
+                {
+                    "name": "1bfa-WebSG"
+                },
+                {
+                    "name": "1bfa-BastionSG"
+                },
+                {
+                    "name": "1bfa-HostSG"
+                }
+            ],
+            "server_groups": null,
+            "status": "ACTIVE",
+            "tags": [],
+            "task_state": null,
+            "tenant_id": "855a8d86f375470ca4c58b5d1ec027b7",
+            "terminated_at": null,
+            "trusted_image_certificates": null,
+            "updated": "2022-02-01T14:06:01Z",
+            "user_data": null,
+            "user_id": "2853b30ca94c4201937a4c0e50a49b7e",
+            "vm_state": "active",
+            "volumes": [
+                {
+                    "delete_on_termination": true,
+                    "id": "f07e2750-a5ae-41b5-a76a-7185dea74c5d"
+                }
+            ]
+        },
+        {
+            "OS-DCF:diskConfig": "MANUAL",
+            "OS-EXT-AZ:availability_zone": "nova",
+            "OS-EXT-SRV-ATTR:host": null,
+            "OS-EXT-SRV-ATTR:hostname": null,
+            "OS-EXT-SRV-ATTR:hypervisor_hostname": null,
+            "OS-EXT-SRV-ATTR:instance_name": null,
+            "OS-EXT-SRV-ATTR:kernel_id": null,
+            "OS-EXT-SRV-ATTR:launch_index": null,
+            "OS-EXT-SRV-ATTR:ramdisk_id": null,
+            "OS-EXT-SRV-ATTR:reservation_id": null,
+            "OS-EXT-SRV-ATTR:root_device_name": null,
+            "OS-EXT-SRV-ATTR:user_data": null,
+            "OS-EXT-STS:power_state": 1,
+            "OS-EXT-STS:task_state": null,
+            "OS-EXT-STS:vm_state": "active",
+            "OS-SCH-HNT:scheduler_hints": null,
+            "OS-SRV-USG:launched_at": "2022-02-01T14:06:16.000000",
+            "OS-SRV-USG:terminated_at": null,
+            "accessIPv4": "150.239.26.171",
+            "accessIPv6": "",
+            "addresses": {
+                "1bfa-default-network": [
+                    {
+                        "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:60:25:99",
+                        "OS-EXT-IPS:type": "fixed",
+                        "addr": "192.168.50.170",
+                        "version": 4
+                    },
+                    {
+                        "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:60:25:99",
+                        "OS-EXT-IPS:type": "floating",
+                        "addr": "150.239.26.171",
+                        "version": 4
+                    }
+                ]
+            },
+            "adminPass": null,
+            "az": "nova",
+            "block_device_mapping": null,
+            "cloud": "1bfa-project",
+            "config_drive": "True",
+            "created": "2022-01-31T15:27:10Z",
+            "created_at": "2022-01-31T15:27:10Z",
+            "description": null,
+            "disk_config": "MANUAL",
+            "flavor": {
+                "disk": 200,
+                "ephemeral": 0,
+                "extra_specs": {},
+                "original_name": "GLOBAL-CPU_16_Memory_30720_Disk_200_flavor",
+                "ram": 30720,
+                "swap": 0,
+                "vcpus": 16
+            },
+            "has_config_drive": true,
+            "host": null,
+            "hostId": "7dc5e288f31fc8d8abe873693d34ce73f5d06eb55e2df9ebd7f70eaa",
+            "host_id": "7dc5e288f31fc8d8abe873693d34ce73f5d06eb55e2df9ebd7f70eaa",
+            "host_status": null,
+            "hostname": null,
+            "hypervisor_hostname": null,
+            "id": "eb1b8d46-53e0-4ac9-97b4-e56b572f3274",
+            "image": {
+                "id": null
+            },
+            "instance_name": null,
+            "interface_ip": "150.239.26.171",
+            "kernel_id": null,
+            "key_name": "1bfa-infra_key",
+            "launch_index": null,
+            "launched_at": "2022-02-01T14:06:16.000000",
+            "location": {
+                "cloud": "1bfa-project",
+                "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "855a8d86f375470ca4c58b5d1ec027b7",
+                    "name": "1bfa-project"
+                },
+                "region_name": "regionOne",
+                "zone": "nova"
+            },
+            "locked": false,
+            "metadata": {
+                "AnsibleGroup": "satellites",
+                "Project": "ansible-advanced-v2-1bfa",
+                "env_type": "ansible-advanced-v2",
+                "guid": "1bfa",
+                "instance_filter": "ansible-advanced-v2-james.doherty@arctiq.ca",
+                "ostype": "linux",
+                "owner": "james.doherty@arctiq.ca"
+            },
+            "name": "satellite",
+            "networks": {},
+            "os-extended-volumes:volumes_attached": [
+                {
+                    "delete_on_termination": true,
+                    "id": "a26fc27b-e747-43d5-b1cc-b8373291a413"
+                }
+            ],
+            "personality": null,
+            "power_state": 1,
+            "private_v4": "192.168.50.170",
+            "progress": 0,
+            "project_id": "855a8d86f375470ca4c58b5d1ec027b7",
+            "properties": {
+                "OS-DCF:diskConfig": "MANUAL",
+                "OS-EXT-AZ:availability_zone": "nova",
+                "OS-EXT-SRV-ATTR:host": null,
+                "OS-EXT-SRV-ATTR:hostname": null,
+                "OS-EXT-SRV-ATTR:hypervisor_hostname": null,
+                "OS-EXT-SRV-ATTR:instance_name": null,
+                "OS-EXT-SRV-ATTR:kernel_id": null,
+                "OS-EXT-SRV-ATTR:launch_index": null,
+                "OS-EXT-SRV-ATTR:ramdisk_id": null,
+                "OS-EXT-SRV-ATTR:reservation_id": null,
+                "OS-EXT-SRV-ATTR:root_device_name": null,
+                "OS-EXT-SRV-ATTR:user_data": null,
+                "OS-EXT-STS:power_state": 1,
+                "OS-EXT-STS:task_state": null,
+                "OS-EXT-STS:vm_state": "active",
+                "OS-SCH-HNT:scheduler_hints": null,
+                "OS-SRV-USG:launched_at": "2022-02-01T14:06:16.000000",
+                "OS-SRV-USG:terminated_at": null,
+                "host_status": null,
+                "locked": false,
+                "os-extended-volumes:volumes_attached": [
+                    {
+                        "delete_on_termination": true,
+                        "id": "a26fc27b-e747-43d5-b1cc-b8373291a413"
+                    }
+                ],
+                "trusted_image_certificates": null
+            },
+            "public_v4": "150.239.26.171",
+            "public_v6": "",
+            "ramdisk_id": null,
+            "region": "regionOne",
+            "reservation_id": null,
+            "root_device_name": null,
+            "scheduler_hints": null,
+            "security_groups": [
+                {
+                    "name": "1bfa-WebSG"
+                },
+                {
+                    "name": "1bfa-HostSG"
+                },
+                {
+                    "name": "1bfa-DefaultSG"
+                }
+            ],
+            "server_groups": null,
+            "status": "ACTIVE",
+            "tags": [],
+            "task_state": null,
+            "tenant_id": "855a8d86f375470ca4c58b5d1ec027b7",
+            "terminated_at": null,
+            "trusted_image_certificates": null,
+            "updated": "2022-02-01T14:06:16Z",
+            "user_data": null,
+            "user_id": "2853b30ca94c4201937a4c0e50a49b7e",
+            "vm_state": "active",
+            "volumes": [
+                {
+                    "delete_on_termination": true,
+                    "id": "a26fc27b-e747-43d5-b1cc-b8373291a413"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+---
+instances:
+  - name: server1
+    keypair: 1bfa-keypair
+    image: rhel-8.3
+    flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
+    security_group: 1bfa-HostSG
+    internal_network: 1bfa-dev-network
+    metadata:
+      AnsibleGroup: osp_instances
+      deployment_name: dev
+
+  - name: server2
+    keypair: 1bfa-keypair
+    image: rhel-8.3
+    flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
+    security_group: 1bfa-HostSG
+    internal_network: 1bfa-dev-network
+    metadata:
+      AnsibleGroup: osp_instances
+      deployment_name: dev

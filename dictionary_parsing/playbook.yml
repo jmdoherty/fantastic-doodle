@@ -1,0 +1,32 @@
+---
+- name: Parse output
+  hosts: localhost
+  vars:
+    cloudname: "1bfa-project"
+  tasks:
+  - name: Get info
+    os_server_info:
+      cloud: "{{ cloudname }}"
+    register: cloud_output
+  - name: Store list of instances in instances fact
+    set_fact:
+      instances: "{{
+        instances | default([]) + [{
+          'Name': item.name,
+          'Private IP': item.private_v4,
+          'Public IP': item.public_v4,
+          'Metadata': item.metadata,
+          'CPU': item.flavor.vcpus,
+          'Memory': item.flavor.ram,
+          'Creation Date': item.created,
+          'Instance Stae': item.vm_state,
+        }] }}"
+    loop: "{{ cloud_output.openstack_servers }}"
+  - name: Write to file
+    copy:
+      content: |
+        ---
+        instances:
+        {{ instances | to_nice_yaml}}
+      dest: instances.yml
+# {{ instances | to_nice_yaml }}
